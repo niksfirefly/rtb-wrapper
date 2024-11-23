@@ -17,7 +17,7 @@ fn_display_usage () {
 
 # create backup cli command
 fn_create_backup_cmd () {
-    cmd="rsync_tmbackup.sh '${SOURCE}' '${TARGET}'"
+    cmd="rsync_tmbackup.sh --rsync-append-flags '--filter=\"dir-merge,n- .nobackup\"' '${SOURCE}' '${TARGET}'"
 
     exclude_file_check=${EXCLUDE_FILE:-}
 
